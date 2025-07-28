@@ -2,7 +2,7 @@ version: '3.3'
 
 services:
   mysql:
-    image: mysql:5.5
+    image: bitnami:5.5
     container_name: mysql-container
     environment:
       MYSQL_ROOT_PASSWORD: PassW@rd  # 设置 root 用户密码
