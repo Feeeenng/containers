@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  mysql:
+    image: mysql:5.5
+    container_name: mysql-container
+    environment:
+      MYSQL_ROOT_PASSWORD: PassW@rd  # 设置 root 用户密码
+    #  MYSQL_DATABASE: mydb               # 创建一个数据库（可选）
+    #  MYSQL_USER: user                   # 创建一个用户（可选）
+    #  MYSQL_PASSWORD: userpassword       # 用户密码（可选）
+    volumes:
+      - mysql-data:/var/lib/mysql        # 持久化 MySQL 数据
+    ports:
+      - "3308:3306"                      # 映射容器端口到宿主机端口
+    restart: always                      # 容器退出时自动重启
+
+volumes:
+  mysql-data:                             # 定义持久化存储卷
