@@ -1,5 +1,7 @@
 
 
 # nfs v4 server
+this is nfs server for v4
 
-origin containers :  https://docs.docker.com/engine/reference/run/#runtime-privilege-and-linux-capabilities
+# origin containers 
+https://hub.docker.com/r/gists/nfs-server
