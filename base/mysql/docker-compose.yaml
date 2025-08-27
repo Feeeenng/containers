@@ -5,7 +5,7 @@ services:
     image: registry.cn-shenzhen.aliyuncs.com/os_mirror/mysql:5.5
     container_name: mysql-container
     environment:
-      MYSQL_ROOT_PASSWORD: PassW@rd  # 设置 root 用户密码
+      MYSQL_ROOT_PASSWORD: P@ssw0rd  # 设置 root 用户密码
     #  MYSQL_DATABASE: mydb               # 创建一个数据库（可选）
     #  MYSQL_USER: user                   # 创建一个用户（可选）
     #  MYSQL_PASSWORD: userpassword       # 用户密码（可选）
