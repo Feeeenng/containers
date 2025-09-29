@@ -1,0 +1,28 @@
+version: '3.8'
+
+services:
+  mindoc:
+    image: registry.cn-hangzhou.aliyuncs.com/mindoc-org/mindoc:v2.2-beta.1
+    container_name: mindoc
+    restart: always
+    networks:
+      - mynet
+    ports:
+      - "80:8181"
+    environment:
+      MINDOC_DB_ADAPTER: sqlite3
+      MINDOC_DB_DATABASE: /mindoc/database/mindoc.db
+      MINDOC_CACHE: "true"
+      MINDOC_CACHE_PROVIDER: file
+      MINDOC_ENABLE_EXPORT: "true"
+    volumes:
+      - /data/mindoc/conf:/mindoc/conf
+      - /data/mindoc/uploads:/mindoc/uploads
+      - ./database/mindoc.db:/mindoc/database/mindoc.db
+networks:
+  mynet:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.31.0.0/16
+          gateway: 172.31.0.1
